@@ -1,5 +1,8 @@
 # Markdown to Slack Format Conversion Tool
 
+[![CI](https://github.com/Rodrigo-Rios/Markdown2Slack/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/Rodrigo-Rios/Markdown2Slack/actions/workflows/pipeline.yaml)
+[![PyPI version](https://badge.fury.io/py/markdown2slack.svg)](https://badge.fury.io/py/markdown2slack)
+
 This tool was developed to simplify the conversion of Markdown text to the format accepted by Slack. By using this tool, you can complement the Slack API and easily send formatted messages to channels, groups, and direct conversations on Slack, leveraging the platform's unique formatting.
 
 ## Features
