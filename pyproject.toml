@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "markdown2slack"
-version = "0.1.2"
+version = "0.2.0"
 description = "markdown2slack is converter markdown to slack format"
 license = "BeerWare"
 authors = ["Rodrigo da Silva Rios <rodrigosr.rios@live.com>"]

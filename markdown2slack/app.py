@@ -33,16 +33,14 @@ class Convert:
         # Underlined
         text = re.sub(r"\\_(.*?)\\_", r"__\1__", text)
 
-        # Markdown (h2) to Slack format (*Subtítulo*)
-        text = re.sub(r"(^|\n)## (.*+)(\n|$)", r"\1*\2*\n", text)
-
-        # Markdown (h1) to Slack format (*Título*)
-        text = re.sub(r"(^|\n)#\s*(.*+)\s*(\n|$)", r"\1*\2*\n\n", text)
+        # Markdown (h1..h6) to Slack format (*Título*)
+        text = re.sub(r"(^|\n)(#{1,6})\s*([^\n]*[^\s])\s*(?=\n|$)", r"\1*\3*\n\n", text)
 
         return text
 
     def markdown_to_slack_format(self, text):
         text = re.sub(self.markdown_link_pattern, self.__replace_markdown_link, text)
+
         text = self.__escape_slack_chars(text)
         text = self.__replace_markdown(text)
 

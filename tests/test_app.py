@@ -65,7 +65,7 @@ def test_convert_list():
 def test_convert_h2():
     text = "## h2"
 
-    expected = "*h2*\n"
+    expected = "*h2*\n\n"
 
     result = convert.markdown_to_slack_format(text)
 
@@ -126,12 +126,17 @@ Test special characters: &amp; &lt; &gt;
 
     expected = """*Welcome to Slack*
 
+
 *Main Features*
+
+
 • *Real-Time Communication*: Use Slack to exchange messages in real time with your team.
 • *Integrations*: Connect with tools like <https://www.google.com/drive/|Google Drive>, <https://trello.com/|Trello>, and <https://github.com/|GitHub>.
 • *Advanced Search*: Quickly find past messages, files, and conversations.
 
 *Text Formatting*
+
+
 • Bold: *Important*
 • Italic: _emphasis_
 • Underlined: __highlight__
@@ -139,11 +144,14 @@ Test special characters: &amp; &lt; &gt;
 • Bold: *This text will be bold*
 
 *Lists*
+
+
 • List item 1
 • List item 2
 • List item 3
 
 *Tasks*
+
 
 1. *Set up your profile*
 2. *Join channels*
@@ -153,11 +161,13 @@ Test special characters: &amp; &lt; &gt;
 
 *Quotes*
 
+
 > "Slack is an essential tool for modern collaboration." - Slack Team
 
 For more information, visit <https://slack.com/|our website>.
 
 *Special Characters*
+
 
 Test special characters: & < >
 """
