@@ -21,6 +21,9 @@ class Convert:
         return text
 
     def __replace_markdown(self, text):
+        # Markdown list (-, *, +) to Slack format (•)
+        text = re.sub(r"(?m)^\s*[-*+]\s+", "• ", text)
+
         # italic
         text = re.sub(r"(?<!\*)\*(?!\*)(.*?)\*(?!\*)", r"_\1_", text)
 
@@ -29,9 +32,6 @@ class Convert:
 
         # Underlined
         text = re.sub(r"\\_(.*?)\\_", r"__\1__", text)
-
-        # Markdown list (-, *, +) to Slack format (•)
-        text = re.sub(r"(?m)^\s*[-*+]\s+", "• ", text)
 
         # Markdown (h2) to Slack format (*Subtítulo*)
         text = re.sub(r"(^|\n)## (.*+)(\n|$)", r"\1*\2*\n", text)
@@ -43,7 +43,6 @@ class Convert:
 
     def markdown_to_slack_format(self, text):
         text = re.sub(self.markdown_link_pattern, self.__replace_markdown_link, text)
-
         text = self.__escape_slack_chars(text)
         text = self.__replace_markdown(text)
 
