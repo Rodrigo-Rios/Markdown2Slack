@@ -1,4 +1,4 @@
-from src.app import Convert
+from markdown2slack.app import Convert
 
 convert = Convert()
 

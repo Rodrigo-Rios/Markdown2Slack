@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "markdown2slack"
-version = "0.1.0"
+version = "0.1.1"
 description = "markdown2slack is converter markdown to slack format"
 license = "BeerWare"
 authors = ["Rodrigo da Silva Rios <rodrigosr.rios@live.com>"]
 readme = "README.md"
-packages = [{include = "src"}]
+packages = [{include = "markdown2slack"}]
 classifiers = [
     "Programming Language :: Python :: 3.11"
 ]
